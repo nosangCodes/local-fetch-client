@@ -167,7 +167,7 @@ export default function Trending({ className }: Props) {
         </span>
       )}
       <div
-        className="md:hide-scroll-bar flex flex-row snap-x snap-mandatory scroll-smooth gap-x-4 overflow-x-auto"
+        className="hide-scroll-bar flex flex-row snap-x snap-mandatory scroll-smooth gap-x-4 overflow-x-auto"
         ref={scrollContainerRef}
       >
         {trendingProducts.map((product) => (
