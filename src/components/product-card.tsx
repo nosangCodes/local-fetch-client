@@ -1,5 +1,6 @@
 import { cn, formatToCurrency } from "@/lib/utils";
 import Image from "next/image";
+import Link from "next/link";
 import React, { forwardRef, Ref } from "react";
 
 interface Props {
@@ -17,16 +18,20 @@ const ProductCard = forwardRef<HTMLDivElement, Props>(
           className
         )}
       >
-        <Image
-          src={product.imageUrl}
-          alt={product.name}
-          width={200}
-          height={100}
-          className="w-fit mx-auto h-[8rem] object-contain"
-          priority={true}
-        />
+        <Link className="hover:cursor-pointer" href={`/${product.id}`}>
+          <Image
+            src={product.imageUrl}
+            alt={product.name}
+            width={200}
+            height={100}
+            className="w-fit mx-auto h-[8rem] object-contain"
+            priority={true}
+          />
+        </Link>
         <div className="pt-4 pb-1 px-2 flex flex-col gap-0">
-          <h2 className="font-bold text-sm">{product.name}</h2>
+          <Link className="hover:cursor-pointer" href={`/${product.id}`}>
+            <h2 className="font-bold text-sm">{product.name}</h2>
+          </Link>
           <p className="text-gray-700 text-sm">{product.category}</p>
 
           <div className="flex items-center gap-2">
